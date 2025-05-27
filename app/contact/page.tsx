@@ -35,7 +35,7 @@ export default function Contact() {
           Get In Touch
         </h2>
         <p className="text-gray-300 text-lg mb-12">
-          Ready to collaborate on the next big thing? Let's connect and build something amazing together.
+          Ready to collaborate on the next big thing? Let&apos;s connect and build something amazing together.
         </p>
         
         <div className="space-y-4">

@@ -27,7 +27,7 @@ const ProfileSection: React.FC = () => {
             Robin Oppenstam
           </h1>
           <p className="text-xl text-pink-400 font-medium">
-            Full Stack Developer & Web 3 fanatic
+            Full Stack Developer & Web3 Fanatic
           </p>
           <p className="text-gray-400 max-w-md mx-auto">
             Building the future, one line of code at a time
