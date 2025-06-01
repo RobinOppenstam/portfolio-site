@@ -1,8 +1,8 @@
 import Layout from '../components/Layout';
 
 const skills: string[] = [
-  "JavaScript/TypeScript", "React/Next.js", "Node.js", "Solidity",
-  "Web3/DeFi", "Smart Contracts", "Blockchain", "Frontend Development"
+  "JavaScript/TypeScript", "React/Next.js", "Node.js", "Solidity","Ethers.js","Foundry","Tailwind",
+ "Smart Contracts", "Blockchain", "postgreSQL"
 ];
 
 export default function About() {
