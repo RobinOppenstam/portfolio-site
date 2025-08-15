@@ -1,8 +1,8 @@
 import Layout from '../components/Layout';
 
 const skills: string[] = [
-  "JavaScript/TypeScript", "React/Next.js", "Node.js", "Solidity","Ethers.js","Foundry","Tailwind",
- "Smart Contracts", "Blockchain", "postgreSQL"
+  "JavaScript/TypeScript", "React/Next.js", "Node.js", "Solidity","Ethers.js","wagmi","Foundry","Tailwind",
+ "Smart Contracts", "Blockchain", "postgreSQL",
 ];
 
 export default function About() {
@@ -15,31 +15,19 @@ export default function About() {
         
         <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
           <p>
-            I&apos;m a passionate developer driven by the endless possibilities of technology. My journey 
-            into coding began with curiosity and has evolved into a deep fascination with building 
-            innovative digital experiences that can reshape how we interact with the web.
+            I’m a Swedish developer who discovered blockchain in 2021 and quickly became captivated by its potential to change how we interact online. That curiosity became a turning point nine months ago when I decided to leave my sales career to dedicate myself to learning how to code — a leap that’s been both challenging and deeply rewarding.
           </p>
           
           <p>
-            Blockchain sparked my interest in 2021 and I&apos;ve been deep in the trenches ever since. 
-            What started as fascination with decentralized technology quickly became a core focus 
-            of my development work. I specialize in Solidity smart contract development and building 
-            decentralized applications that push the boundaries of what&apos;s possible in Web3.
+            In the past year, I’ve focused on building projects that combine Solidity smart contracts with responsive, user-friendly frontends using React and Next.js. My portfolio includes several demo projects and one SaaS product, each created to push my skills further and explore what’s possible in Web3. I enjoy working across the stack and thrive at the intersection of traditional web development and blockchain innovation.
           </p>
           
           <p>
-            On the frontend, I craft responsive and dynamic user interfaces using React and Next.js, 
-            creating seamless experiences that bridge traditional web development with blockchain 
-            technology. Whether it&apos;s building DeFi protocols, NFT marketplaces, or innovative dApps, 
-            I thrive at the intersection of cutting-edge frontend development and blockchain innovation.
+            I’m now seeking a position where I can continue growing as a developer, gain knowledge from more experienced teammates, and contribute meaningfully to projects that have real impact. My strengths lie in learning quickly, adapting to new challenges, and staying curious — qualities that have helped me progress rapidly in my journey so far.
           </p>
           
           <p>
-            Every project is an opportunity to dive deeper into emerging technologies and solve complex 
-            problems. I believe in the transformative power of decentralized technology and am committed 
-            to building the infrastructure and applications that will define the future of the internet. 
-            When I&apos;m not coding, you&apos;ll find me researching the latest blockchain developments, contributing 
-            to open-source projects, and connecting with the vibrant Web3 community.
+            Outside of coding, I’m passionate about decentralization and privacy, following market trends, and staying up to date with emerging technologies, especially in AI. I also enjoy fitness, biohacking, and traveling to explore new places and perspectives.
           </p>
         </div>
         

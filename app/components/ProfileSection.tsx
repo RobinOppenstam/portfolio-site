@@ -30,7 +30,7 @@ const ProfileSection: React.FC = () => {
             Full Stack Developer & Web3 Fanatic
           </p>
           <p className="text-gray-400 max-w-md mx-auto">
-            Building the future, one line of code at a time
+            From sales to code, building dApps and learning something new every day.
           </p>
         </div>
       </div>

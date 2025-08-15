@@ -32,10 +32,10 @@ export default function Contact() {
     <Layout>
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent">
-          Get In Touch
+          Let's Connect
         </h2>
         <p className="text-gray-300 text-lg mb-12">
-          Ready to collaborate on the next big thing? Let&apos;s connect and build something amazing together.
+          Interested in working together? I'm eager to contribute to meaningful projects and learn from experienced developers.
         </p>
         
         <div className="space-y-4">

@@ -6,50 +6,35 @@ const projects: Project[] = [
   {
     id: 1,
     title: "DealtrackR",
-    description: "A comprehensive dashboard that allows crypto investors to track all their OTC purchases and private token allocations The tracker provides live price monitoring and real-time performance analytics. Keeping track of token unlock dates, cliff periods, and release timelines displayed through interactive charts.",
+    description: "A full-stack SaaS helping crypto investors track OTC deals and vesting schedules. Features user authentication, project databases handled by Firebase, Stripe payment processing, and real-time price data via CoinMarketCap API. The frontend is built with Next.js and Tailwind CSS, while the backend uses Node.js and Express.",
     image: "/dealtrackr.png",
     link: "https://dealtrackr.com",
     tech: ["React", "Node.js", "Express", "Stripe", "Firebase"]
   },
-   {
+  {
     id: 2,
-    title: "Blockchain Explorer",
-    description: "A real-time Ethereum blockchain explorer that lets users monitor live blocks, analyze transactions with automatic token detection, and investigate addresses with detailed analytics. Features a unique on-chain activity logging system where users can permanently record their exploration activities using a custom smart contract on Sepolia testnet.",
-    image: "/BlockchainExplorer.png",
-    link: "https://web3-explorer-cyan.vercel.app/",
-    tech: ["Next.js", "Typescript","Ethers.js", "Solidity", "Foundry","Tailwind CSS", "EVM"]
-  },
-  {
-    id: 3,
-    title: "AI Bartender",
-    description: "Cyber Mixologist is your personal AI bartender that takes whatever spirits, mixers, and garnishes you have on hand and creates sophisticated cocktail recipes just for you.",
-    image: "/cybermixologist.png",
-    link: "https://cyber-mixologist.vercel.app/",
-    tech: ["Next.js", "Typescript", "Tailwind", "AI", "LLM"]
-  },
-  {
-    id: 4,
-    title: "Cydonia Staking Protocol",
-    description: "DeFI protocol where the user can stake ETH,USDC,USDT and a custom Cydonia (CDN) token to earn yield in the form of CDN tokens. Dynamic rewards depending on the asset and staking duration. Contracts are deployed on the Sepolia testnet.",
-    image: "/CydoniaStaking.png",
-    link: "https://cydonia-staking.vercel.app/",
+    title: "Defi Lending Protocol",
+    description: "A decentralized lending protocol demo enabling users to lend and borrow multiple assets (ETH, BTC, USDC, USDT) with cross-asset functionality. Built with Solidity smart contracts using Foundry for testing and deployment. Integrates Chainlink CCIP for cross-chain operations and Uniswap for automated token swaps. Frontend developed with Next.js, TypeScript, and wagmi for seamless Web3 interactions. Deployed on Sepolia testnet.",
+    image: "/Defiprotocol-ss.png",
+    link: "lending-protocol-liard.vercel.app",
     tech: ["Next.js", "Typescript", "Solidity", "Foundry", "wagmi", "Tailwind", "EVM"]
-  },
- 
-  {
-    id: 5,
-    title: "Under Construction...",
-    description: "Currently working on a new project. Stay tuned for updates!",
-    image: "/api/placeholder/300/200",
-    link: "",
-    tech: ["???", "???", "???"]
   }
+   ,{
+  id: 3,
+  title: "Cydonia Staking Protocol",
+  description: "A DeFi staking protocol enabling users to stake multiple assets (ETH, USDC, USDT, and custom CDN token) to earn yield in CDN rewards. Features dynamic reward calculations based on asset type and staking duration, implemented through Solidity smart contracts with comprehensive testing via Foundry. Frontend built with Next.js, TypeScript, and wagmi for intuitive staking interactions. Deployed on Sepolia testnet.",
+  image: "/CydoniaStaking.png",
+  link: "https://cydonia-staking.vercel.app/",
+  tech: ["Next.js", "TypeScript", "Solidity", "Foundry", "wagmi", "Tailwind"]
+},
+ 
+  
 ];
 
 export default function Projects() {
   return (
     <Layout>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 max-w-6xl mx-auto">
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
