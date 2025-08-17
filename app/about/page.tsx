@@ -15,7 +15,7 @@ export default function About() {
         
         <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
           <p>
-            I’m a Swedish developer who discovered blockchain in 2021 and quickly became captivated by its potential to change how we interact online. That curiosity became a turning point nine months ago when I decided to leave my sales career to dedicate myself to learning how to code — a leap that’s been both challenging and deeply rewarding.
+            I’m a Swedish developer who discovered blockchain in 2021 and quickly became captivated by its potential to change how we interact online. That curiosity became a turning point nine months ago when I decided to leave my sales career to dedicate myself to learning how to code. A leap that’s been both challenging and deeply rewarding.
           </p>
           
           <p>
@@ -23,11 +23,11 @@ export default function About() {
           </p>
           
           <p>
-            I’m now seeking a position where I can continue growing as a developer, gain knowledge from more experienced teammates, and contribute meaningfully to projects that have real impact. My strengths lie in learning quickly, adapting to new challenges, and staying curious — qualities that have helped me progress rapidly in my journey so far.
+            I’m now seeking a position where I can continue growing as a developer, gain knowledge from more experienced teammates, and contribute meaningfully to projects that have real impact. My strengths lie in learning quickly, adapting to new challenges, and staying curious. Qualities that have helped me progress rapidly in my journey so far.
           </p>
           
           <p>
-            Outside of coding, I’m passionate about decentralization and privacy, following market trends, and staying up to date with emerging technologies, especially in AI. I also enjoy fitness, biohacking, and traveling to explore new places and perspectives.
+            Outside of coding, I’m passionate about decentralization and privacy, following market trends, and staying up to date with the latest AI tools. I also enjoy fitness, biohacking, and traveling to explore new places and perspectives.
           </p>
         </div>
         
