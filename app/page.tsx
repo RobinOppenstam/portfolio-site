@@ -10,24 +10,28 @@ const projects: Project[] = [
     image: "/dealtrackr.png",
     link: "https://dealtrackr.com",
     tech: ["React", "Node.js", "Express", "Stripe", "Firebase"]
-  },
-  {
-    id: 2,
+  },{
+  id: 2,
+  title: "Cydonia Staking Protocol",
+  description: "A demo DeFi staking protocol enabling users to stake multiple assets (ETH, USDC, USDT, and custom CDN token) to earn yield in CDN rewards. Features dynamic reward calculations based on asset type and staking duration, implemented through Solidity smart contracts with comprehensive testing via Foundry. Frontend built with Next.js, TypeScript, and wagmi for intuitive staking interactions. Deployed on Sepolia testnet.",
+  image: "/CydoniaStaking.png",
+  link: "https://cydonia-staking.vercel.app/",
+  tech: ["Next.js", "TypeScript", "Solidity", "Foundry", "wagmi", "Tailwind"]
+}, {id: 3,
+  title: "Blacksmith NFT game",
+  description: "A demo NFT crafting game where users can mint, trade, and combine NFTs to create new items. Built with Solidity smart contracts using Foundry for testing and deployment. Integrates Chainlink VRF for randomness in item crafting and OpenZeppelin libraries for secure NFT standards. Frontend developed with Next.js, TypeScript, and wagmi for seamless Web3 interactions. Deployed on Avalanche C-chain.",
+  image: "/Blacksmithpic.png",
+  link: "https://blacksmith-game.vercel.app/",
+  tech: ["Next.js", "TypeScript", "Solidity", "Foundry", "wagmi", "Tailwind"]
+},{
+    id: 4,
     title: "Defi Lending Protocol",
     description: "A decentralized lending protocol demo enabling users to lend and borrow multiple assets (ETH, BTC, USDC, USDT) with cross-asset functionality. Built with Solidity smart contracts using Foundry for testing and deployment. Integrates Chainlink CCIP for cross-chain operations and Uniswap for automated token swaps. Frontend developed with Next.js, TypeScript, and wagmi for seamless Web3 interactions. Deployed on Sepolia testnet.",
     image: "/Defiprotocol-ss.png",
     link: "lending-protocol-liard.vercel.app",
     tech: ["Next.js", "Typescript", "Solidity", "Foundry", "wagmi", "Tailwind", "EVM"]
   }
-   ,{
-  id: 3,
-  title: "Cydonia Staking Protocol",
-  description: "A DeFi staking protocol enabling users to stake multiple assets (ETH, USDC, USDT, and custom CDN token) to earn yield in CDN rewards. Features dynamic reward calculations based on asset type and staking duration, implemented through Solidity smart contracts with comprehensive testing via Foundry. Frontend built with Next.js, TypeScript, and wagmi for intuitive staking interactions. Deployed on Sepolia testnet.",
-  image: "/CydoniaStaking.png",
-  link: "https://cydonia-staking.vercel.app/",
-  tech: ["Next.js", "TypeScript", "Solidity", "Foundry", "wagmi", "Tailwind"]
-},
- 
+  
   
 ];
 
