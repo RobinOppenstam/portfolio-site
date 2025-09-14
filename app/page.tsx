@@ -28,7 +28,7 @@ const projects: Project[] = [
     title: "Defi Lending Protocol",
     description: "A decentralized lending protocol demo enabling users to lend and borrow multiple assets (ETH, BTC, USDC, USDT) with cross-asset functionality. Built with Solidity smart contracts using Foundry for testing and deployment. Integrates Chainlink CCIP for cross-chain operations and Uniswap for automated token swaps. Frontend developed with Next.js, TypeScript, and wagmi for seamless Web3 interactions. Deployed on Sepolia testnet.",
     image: "/Defiprotocol-ss.png",
-    link: "lending-protocol-liard.vercel.app",
+    link: "https://lending-protocol-liard.vercel.app",
     tech: ["Next.js", "Typescript", "Solidity", "Foundry", "wagmi", "Tailwind", "EVM"]
   }
   
