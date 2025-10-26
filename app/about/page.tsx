@@ -19,7 +19,7 @@ export default function About() {
           </p>
 
           <p>
-            Over the past year, I&apos;ve focused on developing full-stack Web3 projects that integrate Solidity smart contracts with modern, responsive frontends built in React and Next.js. My portfolio includes several demo applications and a SaaS product, each designed to deepen my technical expertise and explore practical blockchain use cases. I enjoy working across the stack and thrive where traditional web development meets decentralized innovation.
+            Over the past year, I&apos;ve focused on developing full-stack Web3 projects that integrate Solidity smart contracts with modern, responsive frontends built in React and Next.js. My portfolio includes testnet dApps and a SaaS product, each designed to deepen my technical expertise and explore practical blockchain use cases. I enjoy working across the stack and thrive where traditional web development meets decentralized innovation.
           </p>
 
           <p>

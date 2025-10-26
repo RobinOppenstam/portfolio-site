@@ -14,7 +14,7 @@ const projects: Project[] = [
   }, {
     id: 2,
     title: "DealtrackR",
-    description: "A fullscale SaaS helping crypto investors track OTC deals and vesting schedules with 200+ registered users. Features user authentication, project databases handled by Firebase, Stripe payment processing, and real-time price data via CoinMarketCap API. The frontend is built with Next.js and Tailwind CSS, while the backend uses Node.js and Express.",
+    description: "A fullscale SaaS helping crypto investors track seed rounds and manage their portfolio with 200+ registered users. Provides comprehensive tracking of vesting schedules, real-time price performance, and portfolio value through interactive dashboard and chart views. Features user authentication, project databases handled by Firebase, Stripe payment processing, and real-time price data via CoinMarketCap API. The frontend is built with Next.js, while the backend uses Node.js and Express.",
     image: "/dealtrackr.png",
     link: "https://dealtrackr.com",
     tech: ["React", "Node.js", "Express", "Stripe", "Firebase"]
@@ -50,10 +50,16 @@ const projects: Project[] = [
 export default function Projects() {
   return (
     <Layout>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent">
+          Portfolio Projects
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
       </div>
     </Layout>
   );
