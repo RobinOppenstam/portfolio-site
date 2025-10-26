@@ -8,6 +8,7 @@ import { NavItem } from '@/types';
 const navItems: NavItem[] = [
   { name: 'Projects', href: '/' },
   { name: 'About Me', href: '/about' },
+  { name: 'Certificates', href: '/certificates' },
   { name: 'Contact', href: '/contact' }
 ];
 
