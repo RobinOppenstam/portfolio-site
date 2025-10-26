@@ -39,7 +39,7 @@ const projects: Project[] = [
     image: "/Blacksmithpic.png",
     link: "https://blacksmith-game.vercel.app/",
     github: "https://github.com/RobinOppenstam/blacksmith-game",
-    tech: ["Next.js", "TypeScript", "Solidity", "Foundry", "wagmi", "Tailwind"]
+    tech: ["Next.js", "TypeScript", "Solidity", "Foundry", "wagmi", "Tailwind","IPFS", "ERC-721", "Avalanche"]
   }, {
     id: 5,
     title: "Defi Lending Protocol",
