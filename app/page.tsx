@@ -172,7 +172,7 @@ export default function Home() {
         ref={(el) => {
           if (el) sectionsRef.current.set('projects', el);
         }}
-        className={`min-h-screen py-20 border-b border-gray-800 transition-all duration-1000 ${
+        className={`min-h-screen py-20 transition-all duration-1000 ${
           visibleSections.has('projects') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
@@ -195,7 +195,7 @@ export default function Home() {
         ref={(el) => {
           if (el) sectionsRef.current.set('about', el);
         }}
-        className={`min-h-screen py-20 bg-gray-900/30 border-b border-gray-800 transition-all duration-1000 ${
+        className={`min-h-screen py-20 transition-all duration-1000 ${
           visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
@@ -222,13 +222,13 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-gray-700">
-            <h3 className="text-xl font-semibold text-pink-400 mb-4">Core Technologies</h3>
+          <div className="mt-12 pt-8">
+            <h3 className="text-xl font-semibold bg-gradient-to-r from-gray-300 via-gray-100 to-gray-300 bg-clip-text text-transparent mb-4">Core Technologies</h3>
             <div className="flex flex-wrap gap-3">
               {skills.map((skill, index) => (
                 <span
                   key={index}
-                  className="px-4 py-2 bg-pink-500/10 text-pink-400 border border-pink-500/30 rounded-full text-sm font-medium hover:bg-pink-500/20 transition-colors"
+                  className="px-4 py-2 bg-gradient-to-r from-gray-700 to-gray-600 text-gray-100 border border-gray-500 rounded-full text-sm font-medium hover:from-gray-600 hover:to-gray-500 hover:border-gray-400 hover:shadow-md hover:shadow-gray-400/20 transition-all"
                 >
                   {skill}
                 </span>
@@ -244,7 +244,7 @@ export default function Home() {
         ref={(el) => {
           if (el) sectionsRef.current.set('certificates', el);
         }}
-        className={`min-h-screen py-20 border-b border-gray-800 transition-all duration-1000 ${
+        className={`min-h-screen py-20 transition-all duration-1000 ${
           visibleSections.has('certificates') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
@@ -273,7 +273,7 @@ export default function Home() {
                     </span>
                   </div>
                 </div>
-                <div className="p-4 text-center border-t border-gray-700">
+                <div className="p-4 text-center border-t border-border">
                   <h3 className="text-lg font-semibold text-white mb-1">
                     {cert.title}
                   </h3>
