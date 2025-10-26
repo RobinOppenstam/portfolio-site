@@ -1,6 +1,6 @@
 import Layout from '../components/Layout';
 import { ContactLink } from '@/types';
-import { SiLinkedin, SiGithub } from 'react-icons/si';
+import { SiLinkedin, SiGithub, SiX } from 'react-icons/si';
 import { HiOutlineMail } from 'react-icons/hi';
 
 const contactLinks: ContactLink[] = [
@@ -24,6 +24,13 @@ const contactLinks: ContactLink[] = [
     link: "https://www.linkedin.com/in/robin-oppenstam-487466151/",
     icon: SiLinkedin,
     hoverColor: "hover:border-blue-400 hover:shadow-blue-400/50 hover:bg-blue-400/5"
+  },
+  {
+    name: "Twitter",
+    value: "@Jiberish_eth",
+    link: "https://twitter.com/Jiberish_eth",
+    icon: SiX,
+    hoverColor: "hover:border-sky-400 hover:shadow-sky-400/50 hover:bg-sky-400/5"
   }
 ];
 
