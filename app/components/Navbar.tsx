@@ -1,23 +1,29 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { NavItem } from '@/types';
 
 const navItems: NavItem[] = [
-  { name: 'Projects', href: '/' },
-  { name: 'About Me', href: '/about' },
-  { name: 'Certificates', href: '/certificates' },
-  { name: 'Contact', href: '/contact' }
+  { name: 'Projects', href: '#projects' },
+  { name: 'About Me', href: '#about' },
+  { name: 'Certificates', href: '#certificates' },
+  { name: 'Contact', href: '#contact' }
 ];
 
 const Navbar: React.FC = () => {
-  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
+    }
   };
 
   return (
@@ -28,18 +34,19 @@ const Navbar: React.FC = () => {
             <div className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent">
               PORTFOLIO
             </div>
-            
+
             <div className="hidden md:flex space-x-8">
               {navItems.map((item) => (
-                <Link key={item.name} href={item.href} className="focus:outline-none">
-                  <span className={`px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer ${
-                    pathname === item.href
-                      ? 'text-cyan-400 bg-cyan-400/10 shadow-lg shadow-cyan-400/50'
-                      : 'text-gray-300 hover:text-cyan-400 hover:bg-cyan-400/10'
-                  }`}>
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={(e) => scrollToSection(e, item.href)}
+                  className="focus:outline-none"
+                >
+                  <span className="px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer text-gray-300 hover:text-cyan-400 hover:bg-cyan-400/10">
                     {item.name}
                   </span>
-                </Link>
+                </a>
               ))}
             </div>
 
@@ -71,20 +78,16 @@ const Navbar: React.FC = () => {
           <div className="fixed right-0 top-0 h-full w-full bg-gray-900/95 backdrop-blur-lg transform transition-transform duration-300">
             <div className="flex flex-col pt-20 px-4 space-y-4">
               {navItems.map((item) => (
-                <Link
+                <a
                   key={item.name}
                   href={item.href}
-                  onClick={toggleMenu}
+                  onClick={(e) => scrollToSection(e, item.href)}
                   className="focus:outline-none"
                 >
-                  <span className={`block px-4 py-3 text-center transition-all duration-300 cursor-pointer ${
-                    pathname === item.href
-                      ? 'text-cyan-400'
-                      : 'text-gray-300 hover:text-cyan-400'
-                  }`}>
+                  <span className="block px-4 py-3 text-center transition-all duration-300 cursor-pointer text-gray-300 hover:text-cyan-400">
                     {item.name}
                   </span>
-                </Link>
+                </a>
               ))}
             </div>
           </div>
