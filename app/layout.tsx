@@ -5,6 +5,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://robinoppenstam.com'),
   title: 'Robin Oppenstam - Portfolio',
   description: 'Full Stack Developer & Web3 fanatic',
   openGraph: {

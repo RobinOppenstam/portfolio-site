@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
             
             <div className="hidden md:flex space-x-8">
               {navItems.map((item) => (
-                <Link key={item.name} href={item.href}>
+                <Link key={item.name} href={item.href} className="focus:outline-none">
                   <span className={`px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer ${
                     pathname === item.href
                       ? 'text-cyan-400 bg-cyan-400/10 shadow-lg shadow-cyan-400/50'
@@ -70,10 +70,11 @@ const Navbar: React.FC = () => {
           <div className="fixed right-0 top-0 h-full w-full bg-gray-900/95 backdrop-blur-lg transform transition-transform duration-300">
             <div className="flex flex-col pt-20 px-4 space-y-4">
               {navItems.map((item) => (
-                <Link 
-                  key={item.name} 
+                <Link
+                  key={item.name}
                   href={item.href}
                   onClick={toggleMenu}
+                  className="focus:outline-none"
                 >
                   <span className={`block px-4 py-3 text-center transition-all duration-300 cursor-pointer ${
                     pathname === item.href

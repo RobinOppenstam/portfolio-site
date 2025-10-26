@@ -15,19 +15,19 @@ export default function About() {
         
         <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
           <p>
-            I'm a Swedish developer with a background in sales who discovered blockchain in 2021 and quickly became fascinated by its potential to reshape how we interact online. That curiosity led me to take a major leap, leaving my sales career to dedicate myself fully to learning how to code. It has been a challenging yet incredibly rewarding journey of constant growth and discovery.
+            I&apos;m a Swedish developer with a background in sales who discovered blockchain in 2021 and quickly became fascinated by its potential to reshape how we interact online. That curiosity led me to take a major leap, leaving my sales career to dedicate myself fully to learning how to code. It has been a challenging yet incredibly rewarding journey of constant growth and discovery.
           </p>
 
           <p>
-            Over the past year, I've focused on developing full-stack Web3 projects that integrate Solidity smart contracts with modern, responsive frontends built in React and Next.js. My portfolio includes several demo applications and a SaaS product, each designed to deepen my technical expertise and explore practical blockchain use cases. I enjoy working across the stack and thrive where traditional web development meets decentralized innovation.
+            Over the past year, I&apos;ve focused on developing full-stack Web3 projects that integrate Solidity smart contracts with modern, responsive frontends built in React and Next.js. My portfolio includes several demo applications and a SaaS product, each designed to deepen my technical expertise and explore practical blockchain use cases. I enjoy working across the stack and thrive where traditional web development meets decentralized innovation.
           </p>
 
           <p>
-            I'm now looking to collaborate on projects, either as part of a development team or with clients seeking freelance support, where I can contribute to meaningful, high-impact work while continuing to grow as a developer. I bring curiosity, adaptability, and a strong work ethic to every project, along with a passion for creating solutions that are both functional and forward-thinking.
+            I&apos;m now looking to collaborate on projects, either as part of a development team or with clients seeking freelance support, where I can contribute to meaningful, high-impact work while continuing to grow as a developer. I bring curiosity, adaptability, and a strong work ethic to every project, along with a passion for creating solutions that are both functional and forward-thinking.
           </p>
 
           <p>
-            Beyond coding, I'm deeply interested in decentralization, privacy, and emerging tech trends in AI. I also enjoy fitness, biohacking, and traveling, always looking for new ideas and perspectives to bring into my work.
+            Beyond coding, I&apos;m deeply interested in decentralization, privacy, and emerging tech trends in AI. I also enjoy fitness, biohacking, and traveling, always looking for new ideas and perspectives to bring into my work.
           </p>
         </div>
         
