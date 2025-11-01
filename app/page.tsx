@@ -11,6 +11,14 @@ import { HiOutlineMail } from 'react-icons/hi';
 const projects: Project[] = [
   {
     id: 1,
+    title: "Simple DEX",
+    description: "A full-stack decentralized exchange live on Sepolia testnet. Features multi-hop routing for optimal swap paths, real-time Chainlink price oracles, and seamless liquidity provision. Users can trade across 10+ pairs with 6 tokens (USDC, USDT, DAI, WETH, WBTC, LINK), provide liquidity to earn fees, and track positions with live USD values. Built with security-first approach using OpenZeppelin contracts, slippage protection, and comprehensive input validation.",
+    image: "/simpleDEX.png",
+    link: "https://simple-dex-phi.vercel.app/",
+    github: "https://github.com/RobinOppenstam/SimpleDEX",
+    tech: ["Solidity", "Next.js", "TypeScript", "Foundry", "Chainlink", "Wagmi", "Tailwind", "Ethers.js"]
+  }, {
+    id: 2,
     title: "Predicton Market",
     description: "A decentralized prediction market platform where users bet on real-world events using blockchain technology. Features pool-based betting with dynamic odds, automated market resolution via Chainlink price feeds, and multiple market types including daily Bitcoin over/under and price race markets. Built with Solidity smart contracts using Foundry for testing and deployment. Frontend developed with Next.js and TypeScript for seamless Web3 betting interactions. Deployed on Sepolia testnet.",
     image: "/predictionmarket.png",
@@ -18,14 +26,14 @@ const projects: Project[] = [
     github: "https://github.com/RobinOppenstam/PredictionMarket",
     tech: ["Solidity", "Node.js", "Next.js", "Chainlink", "Foundry", "Wagmi", "Ethers.js"]
   }, {
-    id: 2,
+    id: 3,
     title: "DealtrackR",
     description: "A fullscale SaaS helping crypto investors track seed rounds and manage their portfolio with 200+ registered users. Provides comprehensive tracking of vesting schedules, real-time price performance, and portfolio value through interactive dashboard and chart views. Features user authentication, project databases handled by Firebase, Stripe payment processing, and real-time price data via CoinMarketCap API. The frontend is built with Next.js, while the backend uses Node.js and Express.",
     image: "/dealtrackr.png",
     link: "https://dealtrackr.com",
     tech: ["React", "Node.js", "Express", "Stripe", "Firebase"]
   }, {
-    id: 3,
+    id: 4,
     title: "Cydonia Staking Protocol",
     description: "A demo DeFi staking protocol enabling users to stake multiple assets (ETH, USDC, USDT, and custom CDN token) to earn yield in CDN rewards. Features dynamic reward calculations based on asset type and staking duration, implemented through Solidity smart contracts with comprehensive testing via Foundry. Frontend built with Next.js, TypeScript, and wagmi for intuitive staking interactions. Deployed on Sepolia testnet.",
     image: "/CydoniaStaking.png",
@@ -33,7 +41,7 @@ const projects: Project[] = [
     github: "https://github.com/RobinOppenstam/Cydonia-staking",
     tech: ["Next.js", "TypeScript", "Solidity", "Foundry", "wagmi", "Tailwind"]
   }, {
-    id: 4,
+    id: 5,
     title: "Blacksmith NFT game",
     description: "A demo NFT crafting game where users can mint, trade, and combine NFTs to create new items. Built with Solidity smart contracts using Foundry for testing and deployment. Integrates Chainlink VRF for randomness in item crafting and OpenZeppelin libraries for secure NFT standards. Frontend developed with Next.js, TypeScript, and wagmi for seamless Web3 interactions. Deployed on Avalanche C-chain.",
     image: "/Blacksmithpic.png",
@@ -41,7 +49,7 @@ const projects: Project[] = [
     github: "https://github.com/RobinOppenstam/blacksmith-game",
     tech: ["Next.js", "TypeScript", "Solidity", "Foundry", "wagmi", "Tailwind","IPFS", "ERC-721", "Avalanche"]
   }, {
-    id: 5,
+    id: 6,
     title: "Defi Lending Protocol",
     description: "A decentralized lending protocol demo enabling users to lend and borrow multiple assets (ETH, BTC, USDC, USDT) with cross-asset functionality. Built with Solidity smart contracts using Foundry for testing and deployment. Integrates Chainlink CCIP for cross-chain operations and Uniswap for automated token swaps. Frontend developed with Next.js, TypeScript, and wagmi for seamless Web3 interactions. Deployed on Sepolia testnet.",
     image: "/Defiprotocol-ss.png",
