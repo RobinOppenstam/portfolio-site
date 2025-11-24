@@ -19,6 +19,10 @@
     <!-- Alpine JS -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+    <!-- Swiper JS & CSS (Added for Carousel) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <!-- Tailwind Config -->
     <script>
         tailwind.config = {
@@ -106,6 +110,49 @@
             z-index: -1;
         }
 
+        /* Swiper Custom Styles */
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 340px; /* Base width of card */
+            height: auto;
+        }
+        
+        @media (min-width: 768px) {
+            .swiper-slide {
+                width: 400px;
+            }
+        }
+
+        /* Customize Swiper Navigation Colors */
+        .swiper-button-prev, .swiper-button-next {
+            color: #A855F7 !important; /* Brand Purple */
+            background: rgba(0,0,0,0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(4px);
+        }
+        .swiper-button-prev:after, .swiper-button-next:after {
+            font-size: 20px !important;
+            font-weight: bold;
+        }
+        .swiper-pagination-bullet {
+            background: #fff !important;
+            opacity: 0.3;
+        }
+        .swiper-pagination-bullet-active {
+            background: #A855F7 !important;
+            opacity: 1;
+        }
+
         /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #050505; }
@@ -141,13 +188,12 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Developer Centric) -->
+    <!-- Hero Section -->
     <section id="hero" class="relative min-h-screen flex items-center pt-20 pb-10 px-4 overflow-hidden">
         <div class="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             
             <!-- Left: Content -->
             <div class="order-2 lg:order-1 relative z-10">
-                <!-- Availability Pill -->
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel mb-8 w-fit">
                     <span class="relative flex h-2 w-2">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -174,7 +220,6 @@
                     </a>
                 </div>
 
-                <!-- Mini Stats -->
                 <div class="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/5">
                     <div>
                         <h4 class="text-2xl font-bold text-white font-display">1+</h4>
@@ -193,32 +238,23 @@
 
             <!-- Right: Avatar / Visuals -->
             <div class="order-1 lg:order-2 relative flex justify-center lg:justify-end">
-                <!-- Floating Elements behind -->
                 <div class="absolute top-0 right-0 w-72 h-72 bg-brand-purple rounded-full blur-[100px] opacity-20 animate-pulse-slow"></div>
-                
-                <!-- 3D Floating Card Container -->
                 <div class="relative w-full max-w-md aspect-square animate-float">
-                    <!-- Decorative ring -->
                     <div class="absolute inset-0 border border-white/10 rounded-full scale-110 animate-spin" style="animation-duration: 20s;"></div>
                     <div class="absolute inset-0 border border-dashed border-white/10 rounded-full scale-125 animate-spin" style="animation-duration: 30s; animation-direction: reverse;"></div>
 
-                    <!-- Glass Card Holding Image -->
                     <div class="absolute inset-4 glass-panel rounded-[2rem] overflow-hidden border border-white/10 p-2 bg-gradient-to-b from-white/5 to-transparent group/image">
                         <div class="w-full h-full rounded-[1.5rem] overflow-hidden relative bg-gray-900">
-                            <!-- Placeholder Avatar Image -->
                             <img src="images/profilbild.jpg"
                                  alt="Developer Portrait"
                                  class="w-full h-full object-cover opacity-90 group-hover/image:scale-110 transition-all duration-700"
                                  style="filter: grayscale(80%);"
                                  onmouseenter="this.style.filter='grayscale(0%)'"
                                  onmouseleave="this.style.filter='grayscale(80%)'">
-
-                            <!-- Overlay Gradient -->
                             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-60 pointer-events-none"></div>
                         </div>
                     </div>
 
-                    <!-- Floating Badges -->
                     <div class="absolute -right-4 top-20 glass-panel p-3 rounded-2xl flex items-center gap-3 animate-float-delayed shadow-xl shadow-amber-900/20">
                         <div class="bg-amber-700/20 p-2 rounded-lg text-amber-500">
                             <i data-lucide="coffee" class="w-5 h-5"></i>
@@ -256,8 +292,6 @@
                 <span class="text-2xl font-display font-bold mx-4">DOCKER</span>
                 <span class="text-2xl font-display font-bold mx-4">SOLIDITY</span>
                 <span class="text-2xl font-display font-bold mx-4">POSTGRESQL</span>
-                
-                <!-- Duplicate for loop -->
                 <span class="text-2xl font-display font-bold mx-4">REACT</span>
                 <span class="text-2xl font-display font-bold mx-4">TYPESCRIPT</span>
                 <span class="text-2xl font-display font-bold mx-4">NODE.JS</span>
@@ -267,212 +301,214 @@
                 <span class="text-2xl font-display font-bold mx-4">DOCKER</span>
                 <span class="text-2xl font-display font-bold mx-4">SOLIDITY</span>
                 <span class="text-2xl font-display font-bold mx-4">POSTGRESQL</span>
-
-                <!-- Duplicate for loop -->
                 <span class="text-2xl font-display font-bold mx-4">REACT</span>
                 <span class="text-2xl font-display font-bold mx-4">TYPESCRIPT</span>
             </div>
-            <!-- Simple CSS Marquee Animation Style override -->
             <style>
-                .animate-marquee {
-                    animation: marquee 20s linear infinite;
-                }
-                @keyframes marquee {
-                    0% { transform: translateX(0); }
-                    100% { transform: translateX(-50%); }
-                }
+                .animate-marquee { animation: marquee 20s linear infinite; }
+                @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
             </style>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-32 px-4 relative">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+    <!-- Projects Section (Swiper 3D Carousel) -->
+    <section id="projects" class="py-24 px-4 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-10 px-4">
                 <div>
                     <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">Selected Work</h2>
-                    <p class="text-gray-400">A few projects I’ve been working on lately.</p>
+                    <p class="text-gray-400">Swipe to explore recent projects.</p>
                 </div>
-                <a href="#" class="hidden items-center gap-2 text-brand-purple hover:text-white transition-colors mt-4 md:mt-0 group">
-                    View all archives <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-                </a>
+                <!-- Navigation Arrows for Desktop -->
+                <div class="hidden md:flex gap-4">
+                    <!-- Custom styled arrows handled by Swiper, we will place them inside container -->
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Swiper Container -->
+            <div class="swiper projectSwiper !pb-12">
+                <div class="swiper-wrapper">
+                    
+                    <!-- Project Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="group glass-panel rounded-3xl p-2 hover:-translate-y-2 transition-transform duration-500 h-full flex flex-col">
+                            <div class="bg-brand-card rounded-2xl overflow-hidden h-56 relative shrink-0">
+                                <div class="absolute inset-0 bg-gradient-to-br from-gray-800 to-black group-hover:scale-105 transition-transform duration-700"></div>
+                                <div class="absolute bottom-0 left-4 right-4 h-4/5 bg-[#1a1a1a] rounded-t-xl border border-white/10 shadow-2xl group-hover:translate-y-2 transition-transform duration-500 flex items-center justify-center">
+                                     <img src="images/dealtrackr.png" alt="Dealtrackr" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                </div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-1">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 class="text-xl font-bold group-hover:text-brand-purple transition-colors">Dealtrackr.com</h3>
+                                    <a href="#" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="external-link" class="w-4 h-4"></i></a>
+                                </div>
+                                <p class="text-gray-400 text-sm mb-6 line-clamp-2">
+                                    SaaS that helps crypto investors track seed rounds and token unlocks. 200+ users
+                                </p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">React</span>
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Node.js</span>
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Firebase</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="group glass-panel rounded-3xl p-2 hover:-translate-y-2 transition-transform duration-500 h-full flex flex-col">
+                            <div class="bg-brand-card rounded-2xl overflow-hidden h-56 relative shrink-0">
+                                <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 to-black group-hover:scale-105 transition-transform duration-700"></div>
+                                 <div class="absolute bottom-0 left-4 right-4 h-4/5 bg-[#1a1a1a] rounded-t-xl border border-white/10 shadow-2xl group-hover:translate-y-2 transition-transform duration-500 flex items-center justify-center">
+                                     <img src="images/simpleDEX.png" alt="Simple DEX" class="absolute inset-0 w-full h-full object-fit group-hover:scale-105 transition-transform duration-700">
+                                </div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-1">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 class="text-xl font-bold group-hover:text-brand-purple transition-colors">Simple DEX</h3>
+                                    <div class="flex gap-2">
+                                        <a href="https://github.com/RobinOppenstam/SimpleDEX" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="github" class="w-4 h-4"></i></a>
+                                        <a href="https://simple-dex-phi.vercel.app/" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="external-link" class="w-4 h-4"></i></a>
+                                    </div>
+                                </div>
+                                <p class="text-gray-400 text-sm mb-6 line-clamp-2">
+                                    DEX where users can perfom swaps and provide liquidity. 7 custom tokens pairs.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Next.js</span>
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Solidity</span>
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Ethers.js</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Slide 3 -->
+                    <div class="swiper-slide">
+                         <div class="group glass-panel rounded-3xl p-2 hover:-translate-y-2 transition-transform duration-500 h-full flex flex-col">
+                            <div class="bg-brand-card rounded-2xl overflow-hidden h-56 relative shrink-0">
+                                <div class="absolute inset-0 bg-gradient-to-br from-purple-900 to-black group-hover:scale-105 transition-transform duration-700"></div>
+                                 <div class="absolute bottom-0 left-4 right-4 h-4/5 bg-[#1a1a1a] rounded-t-xl border border-white/10 shadow-2xl group-hover:translate-y-2 transition-transform duration-500 flex items-center justify-center">
+                                     <img src="images/predictionmarket.png" alt="Prediction Market" class="absolute inset-0 w-full h-full object-fit group-hover:scale-105 transition-transform duration-700">
+                                </div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-1">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 class="text-xl font-bold group-hover:text-brand-purple transition-colors">Prediction Market</h3>
+                                    <div class="flex gap-2">
+                                        <a href="https://github.com/RobinOppenstam/PredictionMarket" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="github" class="w-4 h-4"></i></a>
+                                        <a href="https://prediction-market-nu.vercel.app/" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="external-link" class="w-4 h-4"></i></a>
+                                    </div>
+                                </div>
+                                <p class="text-gray-400 text-sm mb-6 line-clamp-2">
+                                    P2P betting platform where users bet on real-world events.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Next.js</span>
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Chainlink</span>
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Solidity</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="group glass-panel rounded-3xl p-2 hover:-translate-y-2 transition-transform duration-500 h-full flex flex-col">
+                            <div class="bg-brand-card rounded-2xl overflow-hidden h-56 relative shrink-0">
+                                <div class="absolute inset-0 bg-gradient-to-br from-cyan-900 to-black group-hover:scale-105 transition-transform duration-700"></div>
+                                 <div class="absolute bottom-0 left-4 right-4 h-4/5 bg-[#1a1a1a] rounded-t-xl border border-white/10 shadow-2xl group-hover:translate-y-2 transition-transform duration-500 flex items-center justify-center">
+                                     <img src="images/CydoniaStaking.png" alt="Cydonia Staking" class="absolute inset-0 w-full h-full object-fit group-hover:scale-105 transition-transform duration-700">
+                                </div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-1">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 class="text-xl font-bold group-hover:text-brand-purple transition-colors">Cydonia Staking</h3>
+                                    <div class="flex gap-2">
+                                        <a href="https://github.com/RobinOppenstam/Cydonia-staking" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="github" class="w-4 h-4"></i></a>
+                                        <a href="https://cydonia-staking.vercel.app/" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="external-link" class="w-4 h-4"></i></a>
+                                    </div>
+                                </div>
+                                <p class="text-gray-400 text-sm mb-6 line-clamp-2">
+                                    A DeFi staking protocol enabling users to stake multiple assets with dynamic APY rewards.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Next.js</span>
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">TypeScript</span>
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Solidity</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Slide 5 -->
+                    <div class="swiper-slide">
+                        <div class="group glass-panel rounded-3xl p-2 hover:-translate-y-2 transition-transform duration-500 h-full flex flex-col">
+                            <div class="bg-brand-card rounded-2xl overflow-hidden h-56 relative shrink-0">
+                                <div class="absolute inset-0 bg-gradient-to-br from-orange-900 to-black group-hover:scale-105 transition-transform duration-700"></div>
+                                 <div class="absolute bottom-0 left-4 right-4 h-4/5 bg-[#1a1a1a] rounded-t-xl border border-white/10 shadow-2xl group-hover:translate-y-2 transition-transform duration-500 flex items-center justify-center">
+                                     <img src="images/Blacksmithpic.png" alt="Blacksmith Game" class="absolute inset-0 w-full h-full object-fit group-hover:scale-105 transition-transform duration-700">
+                                </div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-1">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 class="text-xl font-bold group-hover:text-brand-purple transition-colors">Blacksmith NFT Game</h3>
+                                    <div class="flex gap-2">
+                                        <a href="https://github.com/RobinOppenstam/blacksmith-game" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="github" class="w-4 h-4"></i></a>
+                                        <a href="https://blacksmith-game.vercel.app/" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="external-link" class="w-4 h-4"></i></a>
+                                    </div>
+                                </div>
+                                <p class="text-gray-400 text-sm mb-6 line-clamp-2">
+                                    A NFT crafting game where users can mint, trade, and combine NFTs.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Next.js</span>
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Solidity</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Slide 6 -->
+                    <div class="swiper-slide">
+                        <div class="group glass-panel rounded-3xl p-2 hover:-translate-y-2 transition-transform duration-500 h-full flex flex-col">
+                            <div class="bg-brand-card rounded-2xl overflow-hidden h-56 relative shrink-0">
+                                <div class="absolute inset-0 bg-gradient-to-br from-green-900 to-black group-hover:scale-105 transition-transform duration-700"></div>
+                                 <div class="absolute bottom-0 left-4 right-4 h-4/5 bg-[#1a1a1a] rounded-t-xl border border-white/10 shadow-2xl group-hover:translate-y-2 transition-transform duration-500 flex items-center justify-center">
+                                     <img src="images/Defiprotocol-ss.png" alt="DeFi Lending" class="absolute inset-0 w-full h-full object-fit group-hover:scale-105 transition-transform duration-700">
+                                </div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-1">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 class="text-xl font-bold group-hover:text-brand-purple transition-colors">DeFi Lending</h3>
+                                    <div class="flex gap-2">
+                                        <a href="https://github.com/RobinOppenstam/defi-lending-protocol" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="github" class="w-4 h-4"></i></a>
+                                        <a href="https://lending-protocol-liard.vercel.app" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="external-link" class="w-4 h-4"></i></a>
+                                    </div>
+                                </div>
+                                <p class="text-gray-400 text-sm mb-6 line-clamp-2">
+                                    A decentralized lending protocol demo enabling users to lend and borrow assets.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mt-auto">
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Next.js</span>
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Solidity</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
                 
-                <!-- Project Card 1 -->
-                <div class="group glass-panel rounded-3xl p-2 hover:-translate-y-2 transition-transform duration-500">
-                    <div class="bg-brand-card rounded-2xl overflow-hidden h-56 relative">
-                        <div class="absolute inset-0 bg-gradient-to-br from-gray-800 to-black group-hover:scale-105 transition-transform duration-700"></div>
-                        <!-- Mockup Visual -->
-                        <div class="absolute bottom-0 left-4 right-4 h-4/5 bg-[#1a1a1a] rounded-t-xl border border-white/10 shadow-2xl group-hover:translate-y-2 transition-transform duration-500 flex items-center justify-center">
-                             <img src="images/dealtrackr.png" alt="AI Analytics SaaS" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-xl font-bold group-hover:text-brand-purple transition-colors">Dealtrackr.com</h3>
-                            <div class="flex gap-2">
-                                
-                                <a href="#" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="external-link" class="w-4 h-4"></i></a>
-                            </div>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-6 line-clamp-2">
-                            SaaS that helps crypto investors track seed rounds and token unlocks. 200+ users
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">React</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Node.js</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Firebase</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Stripe</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="group glass-panel rounded-3xl p-2 hover:-translate-y-2 transition-transform duration-500">
-                    <div class="bg-brand-card rounded-2xl overflow-hidden h-56 relative">
-                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 to-black group-hover:scale-105 transition-transform duration-700"></div>
-                         <div class="absolute bottom-0 left-4 right-4 h-4/5 bg-[#1a1a1a] rounded-t-xl border border-white/10 shadow-2xl group-hover:translate-y-2 transition-transform duration-500 flex items-center justify-center">
-                             <img src="images/simpleDEX.png" alt="DEX Protocol" class="absolute inset-0 w-full h-full object-fit group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-xl font-bold group-hover:text-brand-purple transition-colors">Simple DEX</h3>
-                            <div class="flex gap-2">
-                                <a href="https://github.com/RobinOppenstam/SimpleDEX" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="github" class="w-4 h-4"></i></a>
-                                <a href="https://simple-dex-phi.vercel.app/" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="external-link" class="w-4 h-4"></i></a>
-                            </div>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-6 line-clamp-2">
-                            DEX where users can perfom swaps and provide liquidity.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Next.js</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Solidity</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Ethers.js</span>
-                            
-                        </div>
-                    </div>
-                </div>
-
-                 <!-- Project Card 3 -->
-                 <div class="group glass-panel rounded-3xl p-2 hover:-translate-y-2 transition-transform duration-500">
-                    <div class="bg-brand-card rounded-2xl overflow-hidden h-56 relative">
-                        <div class="absolute inset-0 bg-gradient-to-br from-purple-900 to-black group-hover:scale-105 transition-transform duration-700"></div>
-                         <div class="absolute bottom-0 left-4 right-4 h-4/5 bg-[#1a1a1a] rounded-t-xl border border-white/10 shadow-2xl group-hover:translate-y-2 transition-transform duration-500 flex items-center justify-center">
-                             <img src="images/predictionmarket.png" alt="DEX Protocol" class="absolute inset-0 w-full h-full object-fit group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-xl font-bold group-hover:text-brand-purple transition-colors">Prediction Market</h3>
-                            <div class="flex gap-2">
-                                <a href="https://github.com/RobinOppenstam/PredictionMarket" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="github" class="w-4 h-4"></i></a>
-                                <a href="https://prediction-market-nu.vercel.app/" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="external-link" class="w-4 h-4"></i></a>
-                            </div>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-6 line-clamp-2">
-                            P2P betting platform where users bet on real-world events.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Next.js</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Chainlink</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Solidity</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 4 - Cydonia Staking (Hidden) -->
-                <div class="hidden group glass-panel rounded-3xl p-2 hover:-translate-y-2 transition-transform duration-500">
-                    <div class="bg-brand-card rounded-2xl overflow-hidden h-56 relative">
-                        <div class="absolute inset-0 bg-gradient-to-br from-cyan-900 to-black group-hover:scale-105 transition-transform duration-700"></div>
-                         <div class="absolute bottom-0 left-4 right-4 h-4/5 bg-[#1a1a1a] rounded-t-xl border border-white/10 shadow-2xl group-hover:translate-y-2 transition-transform duration-500 flex items-center justify-center">
-                             <img src="images/CydoniaStaking.png" alt="Cydonia Staking Protocol" class="absolute inset-0 w-full h-full object-fit group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-xl font-bold group-hover:text-brand-purple transition-colors">Cydonia Staking Protocol</h3>
-                            <div class="flex gap-2">
-                                <a href="https://github.com/RobinOppenstam/Cydonia-staking" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="github" class="w-4 h-4"></i></a>
-                                <a href="https://cydonia-staking.vercel.app/" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="external-link" class="w-4 h-4"></i></a>
-                            </div>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-6 line-clamp-2">
-                            A demo DeFi staking protocol enabling users to stake multiple assets to earn yield in CDN rewards.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Next.js</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">TypeScript</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Solidity</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Foundry</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 5 - Blacksmith NFT Game (Hidden) -->
-                <div class="hidden group glass-panel rounded-3xl p-2 hover:-translate-y-2 transition-transform duration-500">
-                    <div class="bg-brand-card rounded-2xl overflow-hidden h-56 relative">
-                        <div class="absolute inset-0 bg-gradient-to-br from-orange-900 to-black group-hover:scale-105 transition-transform duration-700"></div>
-                         <div class="absolute bottom-0 left-4 right-4 h-4/5 bg-[#1a1a1a] rounded-t-xl border border-white/10 shadow-2xl group-hover:translate-y-2 transition-transform duration-500 flex items-center justify-center">
-                             <img src="images/Blacksmithpic.png" alt="Blacksmith NFT Game" class="absolute inset-0 w-full h-full object-fit group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-xl font-bold group-hover:text-brand-purple transition-colors">Blacksmith NFT Game</h3>
-                            <div class="flex gap-2">
-                                <a href="https://github.com/RobinOppenstam/blacksmith-game" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="github" class="w-4 h-4"></i></a>
-                                <a href="https://blacksmith-game.vercel.app/" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="external-link" class="w-4 h-4"></i></a>
-                            </div>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-6 line-clamp-2">
-                            A demo NFT crafting game where users can mint, trade, and combine NFTs to create new items.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Next.js</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">TypeScript</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Solidity</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">ERC-721</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 6 - DeFi Lending Protocol (Hidden) -->
-                <div class="hidden group glass-panel rounded-3xl p-2 hover:-translate-y-2 transition-transform duration-500">
-                    <div class="bg-brand-card rounded-2xl overflow-hidden h-56 relative">
-                        <div class="absolute inset-0 bg-gradient-to-br from-green-900 to-black group-hover:scale-105 transition-transform duration-700"></div>
-                         <div class="absolute bottom-0 left-4 right-4 h-4/5 bg-[#1a1a1a] rounded-t-xl border border-white/10 shadow-2xl group-hover:translate-y-2 transition-transform duration-500 flex items-center justify-center">
-                             <img src="images/Defiprotocol-ss.png" alt="DeFi Lending Protocol" class="absolute inset-0 w-full h-full object-fit group-hover:scale-105 transition-transform duration-700">
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-xl font-bold group-hover:text-brand-purple transition-colors">DeFi Lending Protocol</h3>
-                            <div class="flex gap-2">
-                                <a href="https://github.com/RobinOppenstam/defi-lending-protocol" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="github" class="w-4 h-4"></i></a>
-                                <a href="https://lending-protocol-liard.vercel.app" class="p-2 bg-white/5 rounded-full hover:bg-white/20 transition hover:text-white text-gray-400"><i data-lucide="external-link" class="w-4 h-4"></i></a>
-                            </div>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-6 line-clamp-2">
-                            A decentralized lending protocol demo enabling users to lend and borrow multiple assets with cross-asset functionality.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Next.js</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">TypeScript</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Solidity</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">Foundry</span>
-                        </div>
-                    </div>
-                </div>
-
+                <!-- Swiper Navigation Elements -->
+                <div class="swiper-pagination !bottom-0"></div>
+                <div class="swiper-button-prev hidden md:flex"></div>
+                <div class="swiper-button-next hidden md:flex"></div>
             </div>
         </div>
     </section>
 
-    <!-- Certificates Section (New) -->
+    <!-- Certificates Section -->
     <section id="certificates" class="py-20 px-4 relative overflow-hidden">
         <!-- Decorative Background -->
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-purple/5 to-transparent opacity-30"></div>
@@ -485,7 +521,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                <!-- Cert Card 1 - freeCodeCamp -->
+                <!-- Cert Cards (Unchanged content) -->
                 <div class="cert-card glass-panel p-6 rounded-2xl border border-white/10 flex items-start gap-4 group cursor-pointer" onclick="openCertModal('images/cerficates/freeCodeCamp/freeCodeCamp.png')">
                     <div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-white flex items-center justify-center">
                         <img src="images/freecodecamplogo.jpg" alt="freeCodeCamp Logo" class="w-full h-full object-cover">
@@ -498,7 +534,6 @@
                     <div class="text-gray-500 group-hover:text-white transition-colors"><i data-lucide="maximize-2" class="w-4 h-4"></i></div>
                 </div>
 
-                <!-- Cert Card 2 - Scrimba -->
                 <div class="cert-card glass-panel p-6 rounded-2xl border border-white/10 flex items-start gap-4 group cursor-pointer" onclick="openCertModal('images/cerficates/scrimba/Frontend Developer Path Scrimba.png')">
                     <div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-white flex items-center justify-center">
                         <img src="images/scrimbalogo.jpg" alt="Scrimba Logo" class="w-full h-full object-cover">
@@ -511,7 +546,6 @@
                     <div class="text-gray-500 group-hover:text-white transition-colors"><i data-lucide="maximize-2" class="w-4 h-4"></i></div>
                 </div>
 
-                <!-- Cert Card 3 - Cyfrin Solidity -->
                 <div class="cert-card glass-panel p-6 rounded-2xl border border-white/10 flex items-start gap-4 group cursor-pointer" onclick="openCertModal('images/cerficates/Cyfrin/Solidity Smart Contract Development TVK954SYD034 2024-11-8.png')">
                     <div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-white flex items-center justify-center">
                         <img src="images/cyfrinlogo.jpg" alt="Cyfrin Logo" class="w-full h-full object-cover">
@@ -524,39 +558,36 @@
                     <div class="text-gray-500 group-hover:text-white transition-colors"><i data-lucide="maximize-2" class="w-4 h-4"></i></div>
                 </div>
 
-                <!-- Cert Card 4 - Cyfrin Full-Stack Web3 -->
-                <div class="cert-card glass-panel p-6 rounded-2xl border border-white/10 flex items-start gap-4 group cursor-pointer" onclick="openCertModal('images/cerficates/Cyfrin/Full-Stack Web3 Development Crash Course FZQ469WUA832 2025-4-20.png')">
+                 <div class="cert-card glass-panel p-6 rounded-2xl border border-white/10 flex items-start gap-4 group cursor-pointer" onclick="openCertModal('images/cerficates/Cyfrin/Full-Stack Web3 Development Crash Course FZQ469WUA832 2025-4-20.png')">
                     <div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-white flex items-center justify-center">
                         <img src="images/cyfrinlogo.jpg" alt="Cyfrin Logo" class="w-full h-full object-cover">
                     </div>
                     <div class="flex-1">
-                        <h3 class="text-lg font-bold text-white">Full-Stack Web3 Development</h3>
+                        <h3 class="text-lg font-bold text-white">Full-Stack Web3 Dev</h3>
                         <p class="text-sm text-brand-purple font-medium mb-1">Cyfrin</p>
                         <p class="text-xs text-gray-500">Issued: 20/04/2025</p>
                     </div>
                     <div class="text-gray-500 group-hover:text-white transition-colors"><i data-lucide="maximize-2" class="w-4 h-4"></i></div>
                 </div>
 
-                <!-- Cert Card 5 - Cyfrin Aave -->
-                <div class="cert-card glass-panel p-6 rounded-2xl border border-white/10 flex items-start gap-4 group cursor-pointer" onclick="openCertModal('images/cerficates/Cyfrin/Aave V3 Protocol Development OQAO9FWSQR5O 2025-9-12.png')">
+                 <div class="cert-card glass-panel p-6 rounded-2xl border border-white/10 flex items-start gap-4 group cursor-pointer" onclick="openCertModal('images/cerficates/Cyfrin/Aave V3 Protocol Development OQAO9FWSQR5O 2025-9-12.png')">
                     <div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-white flex items-center justify-center">
                         <img src="images/cyfrinlogo.jpg" alt="Cyfrin Logo" class="w-full h-full object-cover">
                     </div>
                     <div class="flex-1">
-                        <h3 class="text-lg font-bold text-white">Aave V3 Protocol Development</h3>
+                        <h3 class="text-lg font-bold text-white">Aave V3 Protocol Dev</h3>
                         <p class="text-sm text-brand-purple font-medium mb-1">Cyfrin</p>
                         <p class="text-xs text-gray-500">Issued: 12/09/2025</p>
                     </div>
                     <div class="text-gray-500 group-hover:text-white transition-colors"><i data-lucide="maximize-2" class="w-4 h-4"></i></div>
                 </div>
 
-                <!-- Cert Card 6 - Cyfrin Wallet Security -->
-                <div class="cert-card glass-panel p-6 rounded-2xl border border-white/10 flex items-start gap-4 group cursor-pointer" onclick="openCertModal('images/cerficates/Cyfrin/Advanced Web3 Wallet Security Z3C67SSNRMBV 2025-9-26.png')">
+                 <div class="cert-card glass-panel p-6 rounded-2xl border border-white/10 flex items-start gap-4 group cursor-pointer" onclick="openCertModal('images/cerficates/Cyfrin/Advanced Web3 Wallet Security Z3C67SSNRMBV 2025-9-26.png')">
                     <div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-white flex items-center justify-center">
                         <img src="images/cyfrinlogo.jpg" alt="Cyfrin Logo" class="w-full h-full object-cover">
                     </div>
                     <div class="flex-1">
-                        <h3 class="text-lg font-bold text-white">Advanced Web3 Wallet Security</h3>
+                        <h3 class="text-lg font-bold text-white">Adv Web3 Wallet Security</h3>
                         <p class="text-sm text-brand-purple font-medium mb-1">Cyfrin</p>
                         <p class="text-xs text-gray-500">Issued: 26/09/2025</p>
                     </div>
@@ -571,7 +602,6 @@
     <section id="contact" class="py-24 px-4 relative">
         <div class="max-w-4xl mx-auto text-center">
             <div class="glass-panel p-8 md:p-16 rounded-[3rem] relative overflow-hidden border-t border-white/20">
-                <!-- Glow effect inside card -->
                 <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1/2 bg-brand-purple blur-[120px] opacity-30 pointer-events-none"></div>
                 
                 <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 relative z-10">Let's build the future together.</h2>
@@ -620,22 +650,51 @@
     <!-- Footer -->
     <footer class="py-12 border-t border-white/5 text-center bg-black">
         <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-center items-center gap-4">
-            
             <p class="text-gray-600 text-sm">&copy; 2025 Robin Oppenstam.</p>
         </div>
     </footer>
 
-    <!-- Initialize Lucide Icons -->
+    <!-- Initialize Scripts -->
     <script>
         lucide.createIcons();
 
-        // Smooth scroll to section without updating URL
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
             if (section) {
                 section.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
+
+        // Initialize Swiper 3D Carousel
+        var swiper = new Swiper(".projectSwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            initialSlide: 1, // Start at the second slide (SimpleDEX) to look balanced
+            loop: true,
+            coverflowEffect: {
+                rotate: 40,
+                stretch: 0,
+                depth: 200,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            // Auto play config (optional)
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+        });
 
         // Certificate Modal Functions
         function openCertModal(imageSrc) {
@@ -645,7 +704,6 @@
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             document.body.style.overflow = 'hidden';
-            // Re-initialize icons for the close button
             setTimeout(() => lucide.createIcons(), 10);
         }
 
@@ -656,7 +714,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Close modal on Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeCertModal();
